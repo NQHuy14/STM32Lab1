@@ -61,11 +61,6 @@ static void MX_GPIO_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
-typedef enum{
-	RED_STATE,
-	YELLOW_STATE,
-	GREEN_STATE
-} oneWayTraffic;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -96,10 +91,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  oneWayTraffic trafficLight=RED_STATE;
+
   while (1)
   {
-	  switch(oneWayTraffic)
 
     // hello world
     /* USER CODE END WHILE */
