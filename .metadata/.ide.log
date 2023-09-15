@@ -549,3 +549,13 @@
 2023-09-15 21:35:15,624 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 3353mS.
 2023-09-15 21:35:15,625 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 1mS.
 2023-09-15 21:35:15,628 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2023-09-15 21:49:52,107 [INFO] MainUpdater:2671 - connection check result : 10
+2023-09-15 21:49:52,236 [INFO] McuFinderGlobals:52 - Set McuFinderConnectedMode to false
+2023-09-15 21:49:52,311 [INFO] CrossSelectorPresenter:1330 - Cross Selector saved comparison directory: C:\Users\Huy\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2023-09-15 21:49:52,315 [INFO] MultiScanPanel:197 - Auto-refresh data requested => check proxy status ongoing
+2023-09-15 21:49:52,315 [INFO] MultiScanPanel:201 - Proxy status is invalid
+2023-09-15 21:49:52,315 [INFO] FinderPluginLoader:87 - Searching for filters in installed packs
+2023-09-15 21:49:52,706 [INFO] DetailPanel:309 - Set advertising image to C:/Users/Huy/STM32Cube/Repository/\en.prom-stm32h5-mcu-finder.jpg
+2023-09-15 21:51:11,678 [INFO] McuFinderGlobals:52 - Set McuFinderConnectedMode to true
+2023-09-15 21:51:11,732 [INFO] ApiDb:276 - Save user favorites file C:\Users\Huy/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2023-09-15 21:51:11,732 [INFO] ApiDb:280 - User favorites MCUs=[]
