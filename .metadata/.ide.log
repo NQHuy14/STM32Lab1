@@ -517,3 +517,35 @@
 2023-09-15 21:02:10,986 [INFO] ApiDb:280 - User favorites MCUs=[]
 2023-09-15 21:08:27,778 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 765293496 Bytes (930086912)
 2023-09-15 21:08:29,583 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 791507896 Bytes (930086912)
+2023-09-15 21:35:06,389 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 770819312 Bytes (930086912)
+2023-09-15 21:35:07,432 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 796446912 Bytes (930086912)
+2023-09-15 21:35:09,010 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 766485216 Bytes (930086912)
+2023-09-15 21:35:09,441 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2023-09-15 21:35:09,441 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2023-09-15 21:35:09,441 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2023-09-15 21:35:09,441 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2023-09-15 21:35:09,442 [INFO] CodeGenerator:663 - code generatio: config db path: C:\ST\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2023-09-15 21:35:09,822 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\MXTmpFiles\license.tmp_save
+2023-09-15 21:35:09,943 [INFO] CodeEngine:257 - Generated code: C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\MXTmpFiles\license.tmp
+2023-09-15 21:35:10,000 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\MXTmpFiles\gpio.tmp_save
+2023-09-15 21:35:10,144 [INFO] CodeEngine:257 - Generated code: C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\MXTmpFiles\gpio.tmp
+2023-09-15 21:35:10,174 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Src\stm32f1xx_it.c_save
+2023-09-15 21:35:10,328 [INFO] CodeEngine:257 - Generated code: C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Src\stm32f1xx_it.c
+2023-09-15 21:35:10,338 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Inc\stm32f1xx_it.h_save
+2023-09-15 21:35:10,482 [INFO] CodeEngine:257 - Generated code: C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Inc\stm32f1xx_it.h
+2023-09-15 21:35:10,509 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Src\stm32f1xx_hal_msp.c_save
+2023-09-15 21:35:10,630 [INFO] CodeEngine:257 - Generated code: C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Src\stm32f1xx_hal_msp.c
+2023-09-15 21:35:10,633 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\MXTmpFiles\system.tmp_save
+2023-09-15 21:35:10,689 [INFO] CodeEngine:257 - Generated code: C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\MXTmpFiles\system.tmp
+2023-09-15 21:35:10,707 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Inc\stm32f1xx_hal_conf.h_save
+2023-09-15 21:35:10,813 [INFO] CodeEngine:257 - Generated code: C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Inc\stm32f1xx_hal_conf.h
+2023-09-15 21:35:10,847 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Inc\main.h_save
+2023-09-15 21:35:10,941 [INFO] CodeEngine:257 - Generated code: C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Inc\main.h
+2023-09-15 21:35:10,955 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Src\main.c_save
+2023-09-15 21:35:11,124 [INFO] CodeEngine:257 - Generated code: C:\Users\Huy\Desktop\LAB STM32\LAB1\STM32\EX1\Core\Src\main.c
+2023-09-15 21:35:12,267 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 97mS.
+2023-09-15 21:35:12,271 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2023-09-15 21:35:12,842 [INFO] ConfigFileManager:1271 - The Die is : DIE412
+2023-09-15 21:35:15,624 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 3353mS.
+2023-09-15 21:35:15,625 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 1mS.
+2023-09-15 21:35:15,628 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
