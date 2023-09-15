@@ -61,12 +61,6 @@ static void MX_GPIO_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
-typedef enum{
-	RED,
-	YELLOW,
-	GREEN
-
-}oneWay;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -97,36 +91,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  oneWay trafficLight=RED;
-  int delay=0;
   while (1)
   {
-	  switch(trafficLight){
-	  case RED:
-		  HAL_GPIO_WritePin(RED_GPIO_Port, RED_Pin, RESET);
-		  HAL_GPIO_WritePin(YELLOW_GPIO_Port, YELLOW_Pin, SET);
-		  HAL_GPIO_WritePin(GREEN_GPIO_Port, GREEN_Pin, SET);
-		  delay=5000;
-		  trafficLight=YELLOW;
-		  break;
-	  case GREEN:
-		  HAL_GPIO_WritePin(RED_GPIO_Port, RED_Pin, SET);
-		  HAL_GPIO_WritePin(YELLOW_GPIO_Port, YELLOW_Pin, SET);
-		  HAL_GPIO_WritePin(GREEN_GPIO_Port, GREEN_Pin, RESET);
-		  delay=3000;
-		  trafficLight=RED;
-		  break;
-	  case YELLOW:
-		  HAL_GPIO_WritePin(RED_GPIO_Port, RED_Pin, SET);
-		  HAL_GPIO_WritePin(YELLOW_GPIO_Port, YELLOW_Pin, RESET);
-		  HAL_GPIO_WritePin(GREEN_GPIO_Port, GREEN_Pin,SET);
-		  delay=2000;
-		  trafficLight=GREEN;
-		  break;
-
-	  }
-	  HAL_Delay(delay);
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -120,7 +120,7 @@ int main(void)
 		  HAL_GPIO_WritePin(RED_GPIO_Port, RED_Pin, SET);
 		  HAL_GPIO_WritePin(YELLOW_GPIO_Port, YELLOW_Pin, RESET);
 		  HAL_GPIO_WritePin(GREEN_GPIO_Port, GREEN_Pin,SET);
-		  delay=2000;
+		  trafficLight=2000;
 		  trafficLight=GREEN;
 		  break;
 
