@@ -92,7 +92,16 @@ int main(void)
   int counterToggle=0;
   while (1)
   {
-    // hello world
+	 if(counterToggle==0){
+	 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_GPIO_Pin, SET);
+	 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_GPIO_Pin, RESET);
+	 counterToggle =1;
+	 }else if(counterToggle==1){
+		 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_GPIO_Pin, RESET);
+		 HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_GPIO_Pin, SET);
+		 counterToggle=0;
+	 }
+	 HAL_Delay(2000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
