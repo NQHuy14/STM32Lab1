@@ -16,6 +16,9 @@
   *
   ******************************************************************************
   */
+typedef enum{
+	RED_NS,YELLOW_NS,GREEN_NS
+} direction;
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -47,6 +50,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -83,14 +87,56 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  direction NS=RED_NS;
+  int delay=0;
   while (1)
   {
+	  switch(NS){
+	  case RED_NS:
+		  HAL_GPIO_WritePin(RED_NS_GPIO_Port, RED_NS_Pin, RESET);
+		  HAL_GPIO_WritePin(YELLOW_NS_GPIO_Port, YELLOW_NS_Pin, SET);
+		  HAL_GPIO_WritePin(GREEN_NS_GPIO_Port, GREEN_NS_Pin, SET);
+
+		  HAL_GPIO_WritePin(RED_WE_GPIO_Port, RED_WE_Pin, SET);
+		  HAL_GPIO_WritePin(YELLOW_WE_GPIO_Port, YELLOW_WE_Pin, SET);
+		  HAL_GPIO_WritePin(GREEN_WE_GPIO_Port, GREEN_WE_Pin, RESET);
+		  NS=GREEN_NS;
+		  delay=5000;
+		  break;
+	  case GREEN_NS:
+		  HAL_GPIO_WritePin(RED_NS_GPIO_Port, RED_NS_Pin, SET);
+		  HAL_GPIO_WritePin(YELLOW_NS_GPIO_Port, YELLOW_NS_Pin, SET);
+		  HAL_GPIO_WritePin(GREEN_NS_GPIO_Port, GREEN_NS_Pin, RESET);
+
+		  HAL_GPIO_WritePin(RED_WE_GPIO_Port, RED_WE_Pin, RESET);
+		  HAL_GPIO_WritePin(YELLOW_WE_GPIO_Port, YELLOW_WE_Pin, SET);
+		  HAL_GPIO_WritePin(GREEN_WE_GPIO_Port, GREEN_WE_Pin, SET);
+		  NS=YELLOW_NS;
+		  delay=3000;
+		  break;
+	  case YELLOW_NS:
+		  HAL_GPIO_WritePin(RED_NS_GPIO_Port, RED_NS_Pin, SET);
+		  HAL_GPIO_WritePin(YELLOW_NS_GPIO_Port, YELLOW_NS_Pin, RESET);
+		  HAL_GPIO_WritePin(GREEN_NS_GPIO_Port, GREEN_NS_Pin, SET);
+
+		  HAL_GPIO_WritePin(RED_WE_GPIO_Port, RED_WE_Pin, SET);
+		  HAL_GPIO_WritePin(YELLOW_WE_GPIO_Port, YELLOW_WE_Pin, RESET);
+		  HAL_GPIO_WritePin(GREEN_WE_GPIO_Port, GREEN_WE_Pin, SET);
+		  delay=2000;
+		  NS=RED_NS;
+		  break;
+
+
+	  }
+	  HAL_Delay(delay);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -131,6 +177,41 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, RED_NS_Pin|YELLOW_NS_Pin|GREEN_NS_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, RED_WE_Pin|YELLOW_WE_Pin|GREEN_WE_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : RED_NS_Pin YELLOW_NS_Pin GREEN_NS_Pin */
+  GPIO_InitStruct.Pin = RED_NS_Pin|YELLOW_NS_Pin|GREEN_NS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : RED_WE_Pin YELLOW_WE_Pin GREEN_WE_Pin */
+  GPIO_InitStruct.Pin = RED_WE_Pin|YELLOW_WE_Pin|GREEN_WE_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
 }
 
 /* USER CODE BEGIN 4 */
