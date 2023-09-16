@@ -16,9 +16,9 @@
   *
   ******************************************************************************
   */
-typedef enum{
-	RED_NS,YELLOW_NS,GREEN_NS
-} direction;
+//typedef enum{
+//	RED_NS,YELLOW_NS,GREEN_NS
+//} direction;
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -64,6 +64,10 @@ static void MX_GPIO_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
+void display7LED(int counter){
+
+
+}
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -94,52 +98,58 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  direction NS=RED_NS;
-  int delay=0;
+//  direction NS=RED_NS;
+//  int delay=0;
+  int counter=0;
   while (1)
   {
-	  switch(NS){
-	  case RED_NS:
-		  HAL_GPIO_WritePin(RED_NS_GPIO_Port, RED_NS_Pin, RESET);
-		  HAL_GPIO_WritePin(YELLOW_NS_GPIO_Port, YELLOW_NS_Pin, SET);
-		  HAL_GPIO_WritePin(GREEN_NS_GPIO_Port, GREEN_NS_Pin, SET);
-
-		  HAL_GPIO_WritePin(RED_WE_GPIO_Port, RED_WE_Pin, SET);
-		  HAL_GPIO_WritePin(YELLOW_WE_GPIO_Port, YELLOW_WE_Pin, SET);
-		  HAL_GPIO_WritePin(GREEN_WE_GPIO_Port, GREEN_WE_Pin, RESET);
-		  NS=GREEN_NS;
-		  delay=5000;
-		  break;
-	  case GREEN_NS:
-		  HAL_GPIO_WritePin(RED_NS_GPIO_Port, RED_NS_Pin, SET);
-		  HAL_GPIO_WritePin(YELLOW_NS_GPIO_Port, YELLOW_NS_Pin, SET);
-		  HAL_GPIO_WritePin(GREEN_NS_GPIO_Port, GREEN_NS_Pin, RESET);
-
-		  HAL_GPIO_WritePin(RED_WE_GPIO_Port, RED_WE_Pin, RESET);
-		  HAL_GPIO_WritePin(YELLOW_WE_GPIO_Port, YELLOW_WE_Pin, SET);
-		  HAL_GPIO_WritePin(GREEN_WE_GPIO_Port, GREEN_WE_Pin, SET);
-		  NS=YELLOW_NS;
-		  delay=3000;
-		  break;
-	  case YELLOW_NS:
-		  HAL_GPIO_WritePin(RED_NS_GPIO_Port, RED_NS_Pin, SET);
-		  HAL_GPIO_WritePin(YELLOW_NS_GPIO_Port, YELLOW_NS_Pin, RESET);
-		  HAL_GPIO_WritePin(GREEN_NS_GPIO_Port, GREEN_NS_Pin, SET);
-
-		  HAL_GPIO_WritePin(RED_WE_GPIO_Port, RED_WE_Pin, SET);
-		  HAL_GPIO_WritePin(YELLOW_WE_GPIO_Port, YELLOW_WE_Pin, RESET);
-		  HAL_GPIO_WritePin(GREEN_WE_GPIO_Port, GREEN_WE_Pin, SET);
-		  delay=2000;
-		  NS=RED_NS;
-		  break;
-
-
-	  }
-	  HAL_Delay(delay);
+//	  switch(NS){
+//	  case RED_NS:
+//		  HAL_GPIO_WritePin(RED_NS_GPIO_Port, RED_NS_Pin, RESET);
+//		  HAL_GPIO_WritePin(YELLOW_NS_GPIO_Port, YELLOW_NS_Pin, SET);
+//		  HAL_GPIO_WritePin(GREEN_NS_GPIO_Port, GREEN_NS_Pin, SET);
+//
+//		  HAL_GPIO_WritePin(RED_WE_GPIO_Port, RED_WE_Pin, SET);
+//		  HAL_GPIO_WritePin(YELLOW_WE_GPIO_Port, YELLOW_WE_Pin, SET);
+//		  HAL_GPIO_WritePin(GREEN_WE_GPIO_Port, GREEN_WE_Pin, RESET);
+//		  NS=GREEN_NS;
+//		  delay=5000;
+//		  break;
+//	  case GREEN_NS:
+//		  HAL_GPIO_WritePin(RED_NS_GPIO_Port, RED_NS_Pin, SET);
+//		  HAL_GPIO_WritePin(YELLOW_NS_GPIO_Port, YELLOW_NS_Pin, SET);
+//		  HAL_GPIO_WritePin(GREEN_NS_GPIO_Port, GREEN_NS_Pin, RESET);
+//
+//		  HAL_GPIO_WritePin(RED_WE_GPIO_Port, RED_WE_Pin, RESET);
+//		  HAL_GPIO_WritePin(YELLOW_WE_GPIO_Port, YELLOW_WE_Pin, SET);
+//		  HAL_GPIO_WritePin(GREEN_WE_GPIO_Port, GREEN_WE_Pin, SET);
+//		  NS=YELLOW_NS;
+//		  delay=3000;
+//		  break;
+//	  case YELLOW_NS:
+//		  HAL_GPIO_WritePin(RED_NS_GPIO_Port, RED_NS_Pin, SET);
+//		  HAL_GPIO_WritePin(YELLOW_NS_GPIO_Port, YELLOW_NS_Pin, RESET);
+//		  HAL_GPIO_WritePin(GREEN_NS_GPIO_Port, GREEN_NS_Pin, SET);
+//
+//		  HAL_GPIO_WritePin(RED_WE_GPIO_Port, RED_WE_Pin, SET);
+//		  HAL_GPIO_WritePin(YELLOW_WE_GPIO_Port, YELLOW_WE_Pin, RESET);
+//		  HAL_GPIO_WritePin(GREEN_WE_GPIO_Port, GREEN_WE_Pin, SET);
+//		  delay=2000;
+//		  NS=RED_NS;
+//		  break;
+//
+//
+//	  }
+//	  HAL_Delay(delay);
 
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  if(counter>=10) counter=0;
+	  display7LED(counter++);
+	  HAL_Delay(1000);
+
+
   }
   /* USER CODE END 3 */
 }
