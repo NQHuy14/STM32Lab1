@@ -61,6 +61,162 @@ static void MX_GPIO_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
+void clearNumberOnClock(int num){
+	switch(num){
+	case 0:
+		  HAL_GPIO_WritePin(FOUR_GPIO_Port, FOUR_Pin, SET);
+
+		break;
+	case 1:
+
+		  HAL_GPIO_WritePin(FIVE_GPIO_Port, FIVE_Pin, SET);
+
+		break;
+	case 2:
+
+		  HAL_GPIO_WritePin(SIX_GPIO_Port, SIX_Pin, SET);
+
+		break;
+	case 3:
+
+		  HAL_GPIO_WritePin(SEVEN_GPIO_Port, SEVEN_Pin, SET);
+
+		break;
+	case 4:
+
+		  HAL_GPIO_WritePin(EIGHT_GPIO_Port, EIGHT_Pin, SET);
+
+		break;
+	case 5:
+
+		  HAL_GPIO_WritePin(NINCE_GPIO_Port, NINCE_Pin, SET);
+
+		break;
+	case 6:
+
+		  HAL_GPIO_WritePin(TEN_GPIO_Port, TEN_Pin, SET);
+
+		break;
+	case 7:
+
+		  HAL_GPIO_WritePin(ELEVEN_GPIO_Port, ELEVEN_Pin, SET);
+
+		break;
+	case 8:
+
+		  HAL_GPIO_WritePin(TWELVE_GPIO_Port, TWELVE_Pin, SET);
+
+		break;
+	case 9:
+
+		  HAL_GPIO_WritePin(THIRTEEN_GPIO_Port, THIRTEEN_Pin, SET);
+
+		break;
+	case 10:
+
+		  HAL_GPIO_WritePin(FOURTEEN_GPIO_Port, FOURTEEN_Pin, SET);
+
+		break;
+	default:
+
+		  HAL_GPIO_WritePin(FIFTEEN_GPIO_Port, FIFTEEN_Pin, SET);
+		break;
+
+	}
+
+}
+void turnALlClock(){
+	  HAL_GPIO_WritePin(FOUR_GPIO_Port, FOUR_Pin, RESET);
+	  HAL_GPIO_WritePin(FIVE_GPIO_Port, FIVE_Pin, RESET);
+	  HAL_GPIO_WritePin(SIX_GPIO_Port, SIX_Pin, RESET);
+	  HAL_GPIO_WritePin(SEVEN_GPIO_Port, SEVEN_Pin, RESET);
+	  HAL_GPIO_WritePin(EIGHT_GPIO_Port, EIGHT_Pin, RESET);
+	  HAL_GPIO_WritePin(NINCE_GPIO_Port, NINCE_Pin, RESET);
+	  HAL_GPIO_WritePin(TEN_GPIO_Port, TEN_Pin, RESET);
+	  HAL_GPIO_WritePin(ELEVEN_GPIO_Port, ELEVEN_Pin, RESET);
+	  HAL_GPIO_WritePin(TWELVE_GPIO_Port, TWELVE_Pin, RESET);
+	  HAL_GPIO_WritePin(THIRTEEN_GPIO_Port, THIRTEEN_Pin, RESET);
+	  HAL_GPIO_WritePin(FOURTEEN_GPIO_Port, FOURTEEN_Pin, RESET);
+	  HAL_GPIO_WritePin(FIFTEEN_GPIO_Port, FIFTEEN_Pin, RESET);
+}
+void clearAllClock(){
+	  HAL_GPIO_WritePin(FOUR_GPIO_Port, FOUR_Pin, SET);
+	  HAL_GPIO_WritePin(FIVE_GPIO_Port, FIVE_Pin, SET);
+	  HAL_GPIO_WritePin(SIX_GPIO_Port, SIX_Pin, SET);
+	  HAL_GPIO_WritePin(SEVEN_GPIO_Port, SEVEN_Pin, SET);
+	  HAL_GPIO_WritePin(EIGHT_GPIO_Port, EIGHT_Pin, SET);
+	  HAL_GPIO_WritePin(NINCE_GPIO_Port, NINCE_Pin, SET);
+	  HAL_GPIO_WritePin(TEN_GPIO_Port, TEN_Pin, SET);
+	  HAL_GPIO_WritePin(ELEVEN_GPIO_Port, ELEVEN_Pin, SET);
+	  HAL_GPIO_WritePin(TWELVE_GPIO_Port, TWELVE_Pin, SET);
+	  HAL_GPIO_WritePin(THIRTEEN_GPIO_Port, THIRTEEN_Pin, SET);
+	  HAL_GPIO_WritePin(FOURTEEN_GPIO_Port, FOURTEEN_Pin, SET);
+	  HAL_GPIO_WritePin(FIFTEEN_GPIO_Port, FIFTEEN_Pin, SET);
+
+}
+void setNumberOnClock(int num){
+	switch(num){
+	case 0:
+		  HAL_GPIO_WritePin(FOUR_GPIO_Port, FOUR_Pin, RESET);
+
+		break;
+	case 1:
+
+		  HAL_GPIO_WritePin(FIVE_GPIO_Port, FIVE_Pin, RESET);
+
+		break;
+	case 2:
+
+		  HAL_GPIO_WritePin(SIX_GPIO_Port, SIX_Pin, RESET);
+
+		break;
+	case 3:
+
+		  HAL_GPIO_WritePin(SEVEN_GPIO_Port, SEVEN_Pin, RESET);
+
+		break;
+	case 4:
+
+		  HAL_GPIO_WritePin(EIGHT_GPIO_Port, EIGHT_Pin, RESET);
+
+		break;
+	case 5:
+
+		  HAL_GPIO_WritePin(NINCE_GPIO_Port, NINCE_Pin, RESET);
+
+		break;
+	case 6:
+
+		  HAL_GPIO_WritePin(TEN_GPIO_Port, TEN_Pin, RESET);
+
+		break;
+	case 7:
+
+		  HAL_GPIO_WritePin(ELEVEN_GPIO_Port, ELEVEN_Pin, RESET);
+
+		break;
+	case 8:
+
+		  HAL_GPIO_WritePin(TWELVE_GPIO_Port, TWELVE_Pin, RESET);
+
+		break;
+	case 9:
+
+		  HAL_GPIO_WritePin(THIRTEEN_GPIO_Port, THIRTEEN_Pin, RESET);
+
+		break;
+	case 10:
+
+		  HAL_GPIO_WritePin(FOURTEEN_GPIO_Port, FOURTEEN_Pin, RESET);
+
+		break;
+	default:
+
+		  HAL_GPIO_WritePin(FIFTEEN_GPIO_Port, FIFTEEN_Pin, RESET);
+		break;
+
+	}
+}
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -94,19 +250,19 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_WritePin(FOUR_GPIO_Port, FOUR_Pin, RESET);
-	  HAL_GPIO_WritePin(FIVE_GPIO_Port, FIVE_Pin, RESET);
-	  HAL_GPIO_WritePin(SIX_GPIO_Port, SIX_Pin, RESET);
-	  HAL_GPIO_WritePin(SEVEN_GPIO_Port, SEVEN_Pin, RESET);
-	  HAL_GPIO_WritePin(EIGHT_GPIO_Port, EIGHT_Pin, RESET);
-	  HAL_GPIO_WritePin(NINCE_GPIO_Port, NINCE_Pin, RESET);
-	  HAL_GPIO_WritePin(TEN_GPIO_Port, TEN_Pin, RESET);
-	  HAL_GPIO_WritePin(ELEVEN_GPIO_Port, ELEVEN_Pin, RESET);
-	  HAL_GPIO_WritePin(TWELVE_GPIO_Port, TWELVE_Pin, RESET);
-	  HAL_GPIO_WritePin(THIRTEEN_GPIO_Port, THIRTEEN_Pin, RESET);
-	  HAL_GPIO_WritePin(FOURTEEN_GPIO_Port, FOURTEEN_Pin, RESET);
-	  HAL_GPIO_WritePin(FIFTEEN_GPIO_Port, FIFTEEN_Pin, RESET);
+	  turnALlClock();// EX6
+	  clearAllClock();//EX7
+	  setNumberOnClock(2);
+	  setNumberOnClock(3);
+	  setNumberOnClock(4);
+
+
+	  clearNumberOnClock(2);
 	  HAL_Delay(1000);
+
+
+
+
 
     /* USER CODE BEGIN 3 */
   }
