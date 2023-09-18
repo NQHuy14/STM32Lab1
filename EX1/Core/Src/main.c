@@ -250,14 +250,17 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  turnALlClock();// EX6
-	  clearAllClock();//EX7
-	  setNumberOnClock(2);
+	  turnALlClock();//     EX6
+	  clearAllClock();//    EX7
+	  setNumberOnClock(2); // EX8
 	  setNumberOnClock(3);
 	  setNumberOnClock(4);
 
 
-	  clearNumberOnClock(2);
+	  clearNumberOnClock(2);//EX9
+
+
+
 	  HAL_Delay(1000);
 
 
