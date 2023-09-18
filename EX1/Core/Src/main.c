@@ -47,6 +47,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -83,6 +84,7 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -92,6 +94,19 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	  HAL_GPIO_WritePin(FOUR_GPIO_Port, FOUR_Pin, RESET);
+	  HAL_GPIO_WritePin(FIVE_GPIO_Port, FIVE_Pin, RESET);
+	  HAL_GPIO_WritePin(SIX_GPIO_Port, SIX_Pin, RESET);
+	  HAL_GPIO_WritePin(SEVEN_GPIO_Port, SEVEN_Pin, RESET);
+	  HAL_GPIO_WritePin(EIGHT_GPIO_Port, EIGHT_Pin, RESET);
+	  HAL_GPIO_WritePin(NINCE_GPIO_Port, NINCE_Pin, RESET);
+	  HAL_GPIO_WritePin(TEN_GPIO_Port, TEN_Pin, RESET);
+	  HAL_GPIO_WritePin(ELEVEN_GPIO_Port, ELEVEN_Pin, RESET);
+	  HAL_GPIO_WritePin(TWELVE_GPIO_Port, TWELVE_Pin, RESET);
+	  HAL_GPIO_WritePin(THIRTEEN_GPIO_Port, THIRTEEN_Pin, RESET);
+	  HAL_GPIO_WritePin(FOURTEEN_GPIO_Port, FOURTEEN_Pin, RESET);
+	  HAL_GPIO_WritePin(FIFTEEN_GPIO_Port, FIFTEEN_Pin, RESET);
+	  HAL_Delay(1000);
 
     /* USER CODE BEGIN 3 */
   }
@@ -131,6 +146,36 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, FOUR_Pin|FIVE_Pin|SIX_Pin|SEVEN_Pin
+                          |EIGHT_Pin|NINCE_Pin|TEN_Pin|ELEVEN_Pin
+                          |TWELVE_Pin|THIRTEEN_Pin|FOURTEEN_Pin|FIFTEEN_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : FOUR_Pin FIVE_Pin SIX_Pin SEVEN_Pin
+                           EIGHT_Pin NINCE_Pin TEN_Pin ELEVEN_Pin
+                           TWELVE_Pin THIRTEEN_Pin FOURTEEN_Pin FIFTEEN_Pin */
+  GPIO_InitStruct.Pin = FOUR_Pin|FIVE_Pin|SIX_Pin|SEVEN_Pin
+                          |EIGHT_Pin|NINCE_Pin|TEN_Pin|ELEVEN_Pin
+                          |TWELVE_Pin|THIRTEEN_Pin|FOURTEEN_Pin|FIFTEEN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
 }
 
 /* USER CODE BEGIN 4 */
