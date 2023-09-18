@@ -250,14 +250,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  turnALlClock();//     EX6
-	  clearAllClock();//    EX7
-	  setNumberOnClock(2); // EX8
-	  setNumberOnClock(3);
-	  setNumberOnClock(4);
+	  turnALlClock();
 
+	  clearNumberOnClock(4);
 
-	  clearNumberOnClock(2);//EX9
 
 
 
