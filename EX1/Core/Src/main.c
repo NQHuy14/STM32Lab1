@@ -61,6 +61,7 @@ static void MX_GPIO_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
+
 void clearNumberOnClock(int num){
 	switch(num){
 	case 0:
@@ -217,6 +218,23 @@ void setNumberOnClock(int num){
 
 	}
 }
+int oneDay=43200;
+int second=0,min=0,hour=0;
+int One=0,Two=0,Three=0,Four=0;Five=0;Six=0,Seven=0,Eight=0;Nince=0;Ten=0;Eleven=0,Twelve=0;
+void realClock(){
+	clearAllClock();
+	setNumberOnClock(0);
+	for(int i=0;i<=43200;i++){
+		second++;
+
+
+		HAL_Delay(1000);
+
+	}
+
+
+
+}
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -247,21 +265,23 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+
+
+
+
+
+
   while (1)
   {
     /* USER CODE END WHILE */
-	  turnALlClock();//     EX6
-	  clearAllClock();//    EX7
-	  setNumberOnClock(2); // EX8
-	  setNumberOnClock(3);
-	  setNumberOnClock(4);
-
-
-	  clearNumberOnClock(2);//EX9
 
 
 
-	  HAL_Delay(1000);
+
+
+
+
 
 
 
